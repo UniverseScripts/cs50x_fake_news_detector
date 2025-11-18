@@ -86,7 +86,7 @@ As you can see, the "activate" file was shown, offering a great start to the ini
 1. "Running on https://... " -> This is the link that the project will be running on.
 2. "Device set to use cpu/gpu" -> Take good note of this as you will have an option to explicitly set the AI model inherent within the project to run on your CPU or GPU, whichever is more efficient. (see "model.py: 4.")
 
-# The introduction seems adequate, I think. It's time to move onto the next section: understanding the code
+### The introduction seems adequate, I think. It's time to move onto the next section: understanding the code
 
 # Comprehension
 #### In this section, I will be guiding you through the **IMPORTANT** codes that truly define the Fake News Detector project!
@@ -193,9 +193,9 @@ Note that I have used Jinja's condition calls to achieve the layout.
 2. "The similar format"
 Notice that HTML files in these catagories all do the same thing, which is to display either a form with "POST" as the API call method to their respective routers in "app.py" **OR** retrieving elements via Jinja's {{variable_name}} post render_template, also in "app.py".
 Here is the general consensus:
-{% extends "layout.html"%} -> This initiates the branching from the "parent" template, aka the abstraction (see "templates/: 1.").
-{% block title %} Page title {% endblock %} -> Extends and inserts content for the page title in <title> tags within the <head> section of "layout.html".
-{% block body %} Html input {% endblock %} -> Extends and inserts content for the page title in <main> tags within the <body> section of "layout.html".
+- {% extends "layout.html"%} -> This initiates the branching from the "parent" template, aka the abstraction (see "templates/: 1.").
+- {% block title %} Page title {% endblock %} -> Extends and inserts content for the page title in <title> tags within the <head> section of "layout.html".
+- {% block body %} Html input {% endblock %} -> Extends and inserts content for the page title in <main> tags within the <body> section of "layout.html".
 
 3. JavaScript's API call ("detect.html")
 This section handles the asynchronous upload and inference request. The script binds to the “Analyze” button, captures the selected PDF via (FormData), and sends it to the Flask endpoint **/upload** using (fetch) with `method: "POST"`.  
@@ -205,4 +205,5 @@ Key steps:
 - Parse JSON response from Flask: `{success, submission_id, verdict, confidence}`.  
 - Dynamically update the DOM to show verdict and confidence without page reload.  
 Error handling: If response includes `"error"`, display it in a styled alert box.  
+
 Security note: CSRF tokens are unnecessary here since the session is server-side managed.
