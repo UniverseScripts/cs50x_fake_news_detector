@@ -32,35 +32,35 @@
 ### Project structure
 #### It is important to check whether the dependent files are sufficient or not. Otherwise, the project may not launch properly.
 **Post-installation structure**
-    CS50_Final_Project/
-    ├── app.py                 # Main Flask application
-    ├── model.py              # AI model and prediction logic
-    ├── helpers.py            # Utility functions (PDF extraction, auth decorators)
-    ├── requirements.txt      # Python dependencies
-    ├── candidates.db         # SQLite database (created automatically)
-    ├── templates/            # HTML templates
-    │   ├── layout.html       # Mainframe layout template
-    │   ├── index.html
-    │   ├── login.html
-    │   ├── register.html
-    │   ├── detect.html
-    │   ├── results.html
-    │   ├── history.html
-    │   └── statistics.html
-    └── static/                 # CSS/Image assets
-    │   └── css/                # CSS assets
-    │   │    └── detect.css
-    │   │    └── history.css
-    │   │    └── layout.css
-    │   │    └── session.css
-    │   │    └── statistics.css
-    │   └── home_logo.png       # Image assets
-    └── CCS50_Final_Project.venv/   # Important assets/libraries within the Python environment (Created upon creating a Python enviroment, see "Installation: 2.")
+-    CS50_Final_Project/
+-   ├── app.py                 # Main Flask application
+-   ├── model.py              # AI model and prediction logic
+-   ├── helpers.py            # Utility functions (PDF extraction, auth decorators)
+-    ├── requirements.txt      # Python dependencies
+-    ├── candidates.db         # SQLite database (created automatically)
+-    ├── templates/            # HTML templates
+-    │   ├── layout.html       # Mainframe layout template
+-    │   ├── index.html
+-    │   ├── login.html
+-    │   ├── register.html
+-    │   ├── detect.html
+-    │   ├── results.html
+-    │   ├── history.html
+-    │   └── statistics.html
+-    └── static/                 # CSS/Image assets
+-    │   └── css/                # CSS assets
+-    │   │    └── detect.css
+-    │   │    └── history.css
+-    │   │    └── layout.css
+-    │   │    └── session.css
+-    │   │    └── statistics.css
+-    │   └── home_logo.png       # Image assets
+-    └── CCS50_Final_Project.venv/   # Important assets/libraries within the Python environment (Created upon creating a Python enviroment, see "Installation: 2.")
 
 **First-flask-run structure (see "Installation: 4.")**
 Post-installation structure
-    └── flask_session/   # Records Flask sessions (Automatically created after running a Flask session)
-    └── \_\_pycache\_\_/   # Runs, interprets and stores the 3 ".py" files (Automatically created upon Flask launch)
+-    └── flask_session/   # Records Flask sessions (Automatically created after running a Flask session)
+-    └── \_\_pycache\_\_/   # Runs, interprets and stores the 3 ".py" files (Automatically created upon Flask launch)
 
 **Note: \_\_pycache\_\_ may or may not be created since this depends on your VSCode settings but by default, it should.**
 
@@ -207,3 +207,4 @@ Key steps:
 Error handling: If response includes `"error"`, display it in a styled alert box.  
 
 Security note: CSRF tokens are unnecessary here since the session is server-side managed.
+
