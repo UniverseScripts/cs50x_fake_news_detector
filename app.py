@@ -58,8 +58,6 @@ def index():
     candidates = db.execute("SELECT username FROM users WHERE id = ?", (session["user_id"],)).fetchone()
     return render_template("index.html", candidates=candidates["username"])
 
-#Ensure file upload exists
-os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok= True)
 
 @app.route("/detect", methods=["GET", "POST"])
 @login_required
@@ -243,4 +241,5 @@ def stats():
     username = db.execute("SELECT username FROM users WHERE id = ?", (session["user_id"],)).fetchone()
     summary = db.execute("SELECT COUNT(*) AS total_uploads, SUM(CASE WHEN r.verdict = 'FAKE' THEN 1 ELSE 0 END) AS fake_count, SUM(CASE WHEN r.verdict = 'REAL' THEN 1 ELSE 0 END) AS real_count, ROUND(AVG(s.t_total_ms), 2) AS avg_total, ROUND(AVG(s.t_extract_ms), 2) AS avg_extract, ROUND(AVG(s.t_infer_ms), 2) AS avg_infer, ROUND(AVG(r.confidence), 2) AS avg_confidence FROM files f LEFT JOIN results r ON r.submission_id = f.id LEFT JOIN stats s ON s.submission_id = f.id WHERE f.uploader_id = (?)", (session["user_id"],)).fetchone()
     
+
     return render_template("statistics.html", summary=summary, candidates=username["username"])
