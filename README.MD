@@ -16,6 +16,7 @@
     **=> While not compulsory, a virtual enviroment is heavily recommended as to avoid file and module obstructions from other languages**
 
 3. **Install dependencies**
+
     pip install -r requirements.txt
     **IMPORTANT: Your Python must be a prior 3.13 version (3.12.10 recommended) since PyTorch and transformers have not been updated to the latest versions (3.13 & 3.14)**
     **Note: User should reserve roughly _2GB_ of storage since Pytorch and transformer modules are relatively heavy, not to mention one would need minimally _500MB+_ to download a pre-trained AI model**
@@ -207,4 +208,5 @@ Key steps:
 Error handling: If response includes `"error"`, display it in a styled alert box.  
 
 Security note: CSRF tokens are unnecessary here since the session is server-side managed.
+
 
