@@ -49,7 +49,7 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 @login_required
 def index():
     """Create new connection with db"""
@@ -243,3 +243,4 @@ def stats():
     
 
     return render_template("statistics.html", summary=summary, candidates=username["username"])
+
