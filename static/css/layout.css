@@ -1,0 +1,139 @@
+html {
+    background-color: #F8FAFC;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1F2937;
+    margin: 0;
+}
+
+
+.container-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E2E8F0;
+    padding: 1rem;
+    gap: auto;
+    width: auto;
+}
+
+.container-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.title {
+  width: 70%;
+  margin: 4rem 1rem;
+  font-size: 70px;
+  text-align: center;
+  padding: 10px 12px;
+}
+.title-post-login{
+  width: 70%;
+  margin: 2rem 4rem;
+  font-size: 70px;
+  text-align: center;
+  padding: 10px 12px;
+}
+
+.home-icon {
+  margin-right: 10px;
+  transform: scale(0.3);
+  width: 10%;
+  height: 5%;
+}
+.home-icon:hover {
+  opacity: 0.7;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 2%;
+  max-height: 5%;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar a {
+  width: 30%;
+  background-color: #2563EB;
+  color: #fff;
+  margin: 20px 25px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+
+.navbar a:hover {
+  background-color: #1D4ED8;
+}
+
+
+.header {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  background-color: azure;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 12px 10px;
+}
+.content strong {
+  width: auto;
+  margin-right: auto;
+  padding: 15px 20px;
+  font-size: 23px;
+}
+
+.content-text {
+  width: auto;
+  margin-right: auto;
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+.hlight {
+  color: red;
+  font-weight: 700;
+}
+
+
+.result-box {
+  width: auto;
+  background-color: antiquewhite;
+  border: 5px solid black;
+  border-radius: 5px;
+  padding: 12px 10px;
+  margin: 12px 15px;
+}
+
+

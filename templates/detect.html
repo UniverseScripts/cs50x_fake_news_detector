@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}Detect{% endblock %}
+
+{% block body %}
+    <h2 class="header">Upload and Detect</h2>
+    
+    <div class="detect-wrap">
+        <div class="detect-head">
+            <h4>Hello, {{ candidates }}</h4>
+            <small>Upload a PDF to analyze</small>
+        </div>
+    
+        <div class="input-row">
+            <form id="pdf-form" enctype="multipart/form-data">
+                <input type="file" name="file" accept="application/pdf" required>
+                <button type="submit">Analyze</button>
+            </form>
+        </div>
+    </div>
+
+    <pre id="status" aria-live="polite"></pre>
+
+    <script>
+    const form = document.getElementById('pdf-form');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.textContent = 'Uploading...';
+
+        const fd = new FormData(form);
+        try {
+        const res = await fetch('/upload', { method: 'POST', body: fd });
+
+        const ct = res.headers.get('content-type') || '';
+        if (!ct.includes('application/json')) {
+            const text = await res.text();
+            statusEl.textContent = 'Unexpected server response.\n' + text.slice(0, 300);
+            return;
+        }
+
+        const data = await res.json();
+        if (!res.ok || data.success === false) {
+            statusEl.textContent = data.error || `Upload failed (${res.status})`;
+            return;
+        }
+
+        // Redirect to the results page
+        window.location.href = `/results/${data.submission_id}`;
+        } catch (err) {
+        statusEl.textContent = 'Network or server error: ' + err.message;
+        }
+    });
+    </script>
+{% endblock %}

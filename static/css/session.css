@@ -1,0 +1,73 @@
+.form-container {
+    background-color: #E2E8F0;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #1F2937;
+}
+
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+
+.form-container button {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background-color: #2563EB;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #1D4ED8;
+}
+
+.form-container .form-footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.form-container .form-footer a {
+    color: #2563EB;
+    text-decoration: none;
+}
+
+.form-container .form-footer a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 1.5rem;
+    }
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>FND: {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/css/layout.css">
+        <link rel="stylesheet" href="/static/css/detect.css">
+        <link rel="stylesheet" href="/static/css/statistics.css">
+        <link rel="stylesheet" href="/static/css/history.css">
+        <link rel="stylesheet" href="/static/css/session.css">
+    </head>
+    <body>
+        <div class="container-title">
+            <div class="title-container">
+                {% if session["user_id"] %}
+                <img class="home-icon" alt="home_icon" src="/static/home_logo.png" onclick="location.href='/'">
+                <div class="title-post-login">Fake News Detector</div>
+                {% else %}
+                <img class="hidden" alt="home_icon" src="/static/home_logo.png" onclick="location.href='/'" >
+                <div class="title">Fake News Detector</div>
+                {% endif%}
+            </div>
+            {% if session["user_id"] %}
+            <div class="navbar">
+                    <a href="/statistics">Statistics</a>
+                    <a href="/detect">Detect</a>
+                    <a href="/history">History</a>
+            </div>
+            {% endif %}
+        </div>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+    </body>
+</html>

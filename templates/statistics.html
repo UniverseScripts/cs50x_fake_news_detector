@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Statistics
+{% endblock %}
+
+{% block body %}
+    <h2 class="header">{{ candidates }}'s Statistics</h2>
+        <p style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <span class="kpi">Uploads: {{ summary.total_uploads or 0 }}</span>
+            <span class="kpi">Fake: {{ summary.fake_count or 0 }}</span>
+            <span class="kpi">Real: {{ summary.real_count or 0 }}</span>
+            <span class="kpi">Avg total: {{ summary.avg_total or 0 }} ms</span>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Avg extract</td><td>{{ summary.avg_extract or 0 }} ms</td></tr>
+                <tr><td>Avg infer</td><td>{{ summary.avg_infer or 0 }} ms</td></tr>
+                <tr><td>Avg confidence</td><td>{{ summary.avg_confidence or 0 }}%</td></tr>
+            </tbody>
+        </table>
+{% endblock %}

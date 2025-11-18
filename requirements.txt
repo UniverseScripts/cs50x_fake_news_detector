@@ -1,0 +1,7 @@
+_sqlite3
+flask
+flask-session
+torch
+transformers
+PyPDF2
+pdfplumber

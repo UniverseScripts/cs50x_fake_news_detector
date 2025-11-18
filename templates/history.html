@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block body %}
+    <h2 class="header">{{ candidates }}'s History</h2>
+
+    <table class="table-card">
+        <thead>
+            <tr>
+            <th>File</th>
+            <th>Timestamps</th>
+            <th>Verdict</th>
+            <th>Confidence</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if rows and rows|length > 0 %}
+            {% for r in rows %}
+                <tr>
+                <td>
+                    <div>{{ r.file_name }}</div>
+                </td>
+                <td>
+                    <div>Uploaded: {{ r.uploaded_at }}</div>
+                    <div class="meta-muted">Inferred: {{ r.inferred_at or "—" }}</div>
+                </td>
+                <td>
+                    {% if r.verdict == 'REAL' %}
+                    <span class="badge badge-real">REAL</span>
+                    {% elif r.verdict == 'FAKE' %}
+                    <span class="badge badge-fake">FAKE</span>
+                    {% else %}—{% endif %}
+                </td>
+                <td>
+                    {% if r.confidence is not none %}
+                    <div class="progress" aria-label="Confidence">
+                        <span>{{ r.confidence }}%></span>
+                    </div>
+                    <div class="meta-muted">{{ r.confidence }}%</div>
+                    {% else %}—{% endif %}
+                </td>
+                </tr>
+            {% endfor %}
+            {% else %}
+            <tr><td colspan="4" style="text-align: center;">No history yet</td></tr>
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}
+    Main
+{% endblock %}
+    
+{% block body %}
+    <div class="content">
+        <h2 class="header">Introduction</h2>
+        <strong>Hello {{ candidates }},</strong>
+        <div class="content-text">
+        <p>Welcome to the short, comprehensive guide to the website "Fake News Detector", abbreviated as FND. Here, I will guide you through the website's navigation system.</p>
+        <ul>
+            <li>Home button: Located on the top left corner of the screen, users may return to the "Introduction" page.</li>
+            <li>Statistics: Allows users to access the overall performance metric of the Fake News Detector.</li>
+            <li>Detect: Core component, here lies the upload section for the model to detect whether a news article is real or not.</li>
+            <li>History: Users may access their most recent uploads, their results and inferred time.</li>
+        </ul>
+        <p>Before you may proceed to upload and validate your articles, please heed the following:</p>
+        <ol>
+            <li>File must be in <span class="hlight">pdf form!</span> (.pdf extension)</li>
+            <li>This model is restricted to text format, <span class="hlight">DO NOT upload files that contain images</span> as OCR is not implemented!</li>
+            <li>Inference model used: <a href="https://huggingface.co/Pulk17/Fake-News-Detection" target="_blank">Pulk17/Fake-News-Detector</a> (Huggingface.co)</li>
+        </ol>
+        <strong>By reading all of the above, assume that the user agrees and is consent to the use of inference for this model.</strong>
+        </div>
+        <form action="/logout", method="get">
+            <button type="submit">I would like to quit.</button>
+        </form>
+    </div>
+{% endblock %}
