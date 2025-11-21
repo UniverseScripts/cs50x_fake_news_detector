@@ -1,6 +1,6 @@
 # Fake News Detector - CS50x Final Project
-#### Video Demo:  <URL HERE>
-#### Description: 
+#### Video Demo:  [<URL HERE>](https://www.youtube.com/watch?v=a1a9Qjb6nMM)
+#### Description: This file contains all the necessary information for setup, troubleshooting and understanding of the Project's internal workings! This is CS50's Final.
 
 ## Setup
 ### Installation
@@ -207,6 +207,7 @@ Key steps:
 Error handling: If response includes `"error"`, display it in a styled alert box.  
 
 Security note: CSRF tokens are unnecessary here since the session is server-side managed.
+
 
 
 
